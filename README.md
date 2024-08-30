@@ -29,7 +29,18 @@
 
 ## 실행
 
-1. **모델 추론**:
+1. **CSFT**:
+   ```bash
+   cd CSFT
+   CUDA_VISIBLE_DEVICES=1,3 python -m run.train \
+       --model_id `학습시킬 모델 경로` \
+       --batch_size 1 \
+       --gradient_accumulation_steps 64 \
+       --epoch 5 \
+       --lr 2e-5 \
+       --warmup_steps 20
+    ```
+3. **모델 추론**:
 
    ```bash
    python3 inference.py --model_path fiveflow/exa_rlo --input_file test.json --output_file output.json
