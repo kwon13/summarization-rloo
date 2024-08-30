@@ -27,6 +27,14 @@
    pip install -r requirements.txt
    ```
 
+## 실행
+
+1. **모델 추론**:
+
+   ```bash
+   python3 inference.py --model_path fiveflow/exa_rlo --input_file test.json --output_file output.json
+   ```
+
 ## 사용법
 
 1. **데이터 전처리**: 대화 데이터셋을 전처리하고, 선호 문장과 비선호 문장을 생성합니다.
