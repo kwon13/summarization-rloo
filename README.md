@@ -21,6 +21,29 @@
    ```bash
    pip install -r requirements.txt
    ```
+```
+# 학습에 필요한 리소스들을 보관하는 디렉토리
+resource
+└── data
+
+# 실행 가능한 python 스크립트를 보관하는 디렉토리
+CSFT
+├──src
+   ├── data.py 
+   ├── utils.py
+   ├── resource
+      ├── data
+         ├── 일상대화요약_train.json
+         └── 일상대화요약_dev.json
+└── train.py
+RLOO
+├──reward.py
+└── rloo.py
+inference.py
+utils.py
+vllm_inference.py
+requirements.txt
+```
 
 ## 실행
 
