@@ -40,6 +40,36 @@
        --lr 2e-5 \
        --warmup_steps 20
     ```
+
+2. **Reward Model**:
+   ```bash
+   cd RLOO
+   python3 reward.py --base_model=maywell/EXAONE-3.0-7.8B-Instruct-Llamafied --sft_model_path=fiveflow/exa-base --lr=3e-6 --deepspeed --track --output_dir=models/exaone_reward_model --local_eval_batch_size=1 --seed=44413
+    ```
+
+3. **RLOO**:
+   ```bash
+   cd RLOO
+   accelerate launch --config_file deepspeed_zero3.yaml \
+    rloo.py \
+    --output_dir models/rloo_tldr_t=0.1_ppo=1 \
+    --num_ppo_epochs 1 \
+    --num_mini_batches 1 \
+    --learning_rate 3e-6 \
+    --per_device_train_batch_size 1 \
+    --gradient_accumulation_steps 2 \
+    --total_episodes 450 \
+    --model_name_or_path fiveflow/exa-base \
+    --sft_model_path fiveflow/exa-base \
+    --reward_model_path exaone_reward_modelv2 \
+    --local_rollout_forward_batch_size 1 \
+    --non_eos_penalty True \
+    --response_length 512 \
+    --stop_token eos \
+    --temperature 0.1 \
+    --rloo_k 2
+    ```
+
 3. **모델 추론**:
 
    ```bash
