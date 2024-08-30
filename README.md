@@ -12,8 +12,8 @@
 1. **레포지토리 클론**:
 
    ```bash
-   git clone https://github.com/username/summarization-rl.git
-   cd summarization-rl
+   git clone https://github.com/kwon13/summarization-rloo.git
+   cd summarization-rloo
    ```
 
 2. **필요한 패키지 설치**:
