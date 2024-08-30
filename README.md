@@ -41,13 +41,13 @@
        --warmup_steps 20
     ```
 
-2. **Reward Model**:
+2. **Reward Model**:
    ```bash
    cd RLOO
    python3 reward.py --base_model=maywell/EXAONE-3.0-7.8B-Instruct-Llamafied --sft_model_path=fiveflow/exa-base --lr=3e-6 --deepspeed --track --output_dir=models/exaone_reward_model --local_eval_batch_size=1 --seed=44413
     ```
 
-3. **RLOO**:
+3. **RLOO**:
    ```bash
    cd RLOO
    accelerate launch --config_file deepspeed_zero3.yaml \
