@@ -70,17 +70,7 @@
    ```bash
    python3 inference.py --model_path fiveflow/exa_rlo --input_file test.json --output_file output.json
    ```
-
-## 사용법
-
-1. **데이터 전처리**: 대화 데이터셋을 전처리하고, 선호 문장과 비선호 문장을 생성합니다.
-
-2. **모델 학습**: SFT, DPO, RLOO 방법 중 선택하여 모델을 학습시킵니다.
-
-3. **성능 평가**: 학습된 모델을 G-Eval Metric을 사용하여 평가하고, 결과를 비교합니다.
-
-4. **모델 최적화**: 필요에 따라 모델을 Pruning하고, 다양한 파라미터 값으로 추가 실험을 수행합니다.
-
+   
 ## 결과
 
 - RLOO 방식은 G-Eval Metric 기준으로 Base 모델 대비 0.12점 향상 (7.62/10)
