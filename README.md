@@ -28,10 +28,7 @@ summarization-rloo
    ├── src
       ├── data.py 
       ├── utils.py
-      ├── resource
-         ├── data
-            ├── 일상대화요약_train.json
-            └── 일상대화요약_dev.json
+      └── resource
    └── train.py
 ├── RLOO
    ├── reward.py
